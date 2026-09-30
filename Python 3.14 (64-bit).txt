@@ -1,0 +1,15 @@
+alis_fiyati = float(input("Ürünün alış fiyatını girin (TL): "))
+satis_fiyati = float(input("Satış fiyatını girin (TL): "))
+kargo = float(input("Kargo ücretini girin (TL): "))
+komisyon_orani = float(input("Platform komisyon oranını girin (%): "))
+
+komisyon_tutari = (satis_fiyati * komisyon_orani) / 100
+toplam_gider = alis_fiyati + kargo + komisyon_tutari
+net_kar = satis_fiyati - toplam_gider
+
+if net_kar > 0:
+    print("Durum: KÂR! Net Kârınız:", round(net_kar, 2), "TL")
+elif net_kar < 0:
+    print("Durum: ZARAR! Net Zararınız:", round(-net_kar, 2), "TL")
+else:
+    print("Durum: BAŞA BAŞ (Kâr veya zarar yok).")
